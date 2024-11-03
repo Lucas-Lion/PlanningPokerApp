@@ -1,1 +1,1 @@
-<img src="{{ asset('assets/poker-full.png') }}" alt="Logo" class="w-20 h-20">
+<img src="{{ asset('assets/cartas-de-poquer.png') }}" alt="Logo" width="80" {{ $attributes }} />

@@ -10,7 +10,9 @@
         "laravel/jetstream": "^5.3",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
-        "livewire/livewire": "^3.0"
+        "livewire/livewire": "^3.0",
+        "rappasoft/laravel-livewire-tables": "^3.4",
+        "tabler/tabler": "^0.0.33"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

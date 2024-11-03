@@ -35,7 +35,7 @@ class PokerGameTable extends DataTableComponent
 
             Column::make('Criado por')
                 ->label(function ($row) {
-                    return $row->user->name ?? 'Usuário desconhecido';
+                    return $row->user ? $row->user->name : 'Usuário desconhecido';
                 })
                 ->sortable()
                 ->format(fn($value) => "<div class='text-center'>$value</div>")
@@ -76,7 +76,13 @@ class PokerGameTable extends DataTableComponent
 
     public function builder(): Builder
     {
-        $query = PokerGame::query()->with('user');
-        return $query;
+        $pokerGames = PokerGame::query()
+            ->where('created_by', Auth::id())
+            ->with('user')
+            ->get();
+
+       // dd($pokerGames->first()->user); // Verifique se o relacionamento `user` está carregado
+
+        return PokerGame::query()->where('created_by', Auth::id())->with('user');
     }
 }

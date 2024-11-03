@@ -13,7 +13,7 @@
 
             <div x-show="showModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 z-50">
                 <div class="dark:bg-gray-800 rounded-lg shadow-lg p-6 w-1/3">
-                    <h2 class="text-xl text-white mb-4">Cadastrar Poker Planning</h2>
+                    <h2 class="text-xl text-white mb-4">Cadastrar  Planning Poker</h2>
                     <hr class="mb-3">
                     <livewire:poker-game-create />
                 </div>

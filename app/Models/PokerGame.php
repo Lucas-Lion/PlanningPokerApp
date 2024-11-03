@@ -11,9 +11,14 @@ class PokerGame extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'caption', 
-        'voting_system', 
-        'created_by', 
+        'caption',
+        'voting_system',
+        'created_by',
         'deleted_by'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'created_by');
+    }
 }

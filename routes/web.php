@@ -1,10 +1,13 @@
 <?php
 
+use App\Http\Controllers\PokerGameController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return redirect()->route('login');
 });
+
+Route::get('/poker-game/{id}', [PokerGameController::class, 'show'])->name('viewItem');
 
 Route::middleware([
     'auth:sanctum',

@@ -4,7 +4,7 @@
             <x-slot name="logo">
             <div class="flex justify-center flex-col items-center">
                 <x-authentication-card-logo />
-                <h1 class="mt-2 text-2xl font-semibold text-gray-700">Planning Poker</h1>
+                <h1 class="mt-2 text-2xl font-semibold text-white">Planning Poker</h1>
                 </div>
             </x-slot>
        
@@ -18,12 +18,12 @@
             @csrf
 
             <div>
-                <x-label for="email" value="{{ __('Email') }}" />
+                <x-label class="text-white" for="email" value="{{ __('Email') }}" />
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             </div>
 
             <div class="mt-4">
-                <x-label for="password" value="{{ __('Senha') }}" />
+                <x-label class="text-white" for="password" value="{{ __('Senha') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="current-password" />
             </div>
 
@@ -31,7 +31,7 @@
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('register'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
+                    <a class="underline text-sm text-gray-600 hover:text-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('register') }}">
                         {{ __('Cadastre-se') }}
                     </a>
                 @endif
@@ -42,4 +42,6 @@
             </div>
         </form>
     </x-authentication-card>
+    <x-footer />
+
 </x-guest-layout>

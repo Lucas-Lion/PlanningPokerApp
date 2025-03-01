@@ -21,4 +21,9 @@ class PokerGame extends Model
     {
         return $this->belongsTo(User::class, 'created_by');
     }
+
+    public function votes()
+    {
+        return $this->hasMany(PokerVote::class);
+    }
 }

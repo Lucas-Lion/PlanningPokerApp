@@ -74,15 +74,27 @@ class PokerGameTable extends DataTableComponent
         }
     }
 
+    public function startGame($id)
+    {
+        try {
+            $pokerGame = PokerGame::find($id);
+
+            if ($pokerGame) {
+
+                $pokerGame->status = 'iniciado';
+                $pokerGame->save();
+
+                session()->flash('message', 'Jogo iniciado com sucesso.');
+            } else {
+                session()->flash('error', 'Jogo não encontrado.');
+            }
+        } catch (\Exception $e) {
+            session()->flash('error', 'Ocorreu um erro ao iniciar o jogo.');
+        }
+    }
+
     public function builder(): Builder
     {
-        $pokerGames = PokerGame::query()
-            ->where('created_by', Auth::id())
-            ->with('user')
-            ->get();
-
-       // dd($pokerGames->first()->user); // Verifique se o relacionamento `user` está carregado
-
-        return PokerGame::query()->where('created_by', Auth::id())->with('user');
+        return PokerGame::query()->with('user');
     }
 }

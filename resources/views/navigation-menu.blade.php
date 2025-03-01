@@ -8,7 +8,7 @@
                     <a href="{{ route('dashboard') }}">
                         <x-application-mark class="block h-9 w-auto" />
                     </a>
-                    <p class="ms-3 text-white dark:text-white">Poker Planning</p>
+                    <p class="ms-3 text-white dark:text-white">Planning Poker</p>
                 </div>
 
                 <!-- Navigation Links -->

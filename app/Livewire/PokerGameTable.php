@@ -51,13 +51,6 @@ class PokerGameTable extends DataTableComponent
                     return view('components.action-buttons', ['row' => $row])->render();
                 })
                 ->html(),
-
-            Column::make('Iniciar Jogo')
-                ->label(function ($row) {
-                    return "<a href='" . route('game.view', $row->id) . "' class='btn btn-primary'>Iniciar</a>";
-                })
-                ->html(),
-
         ];
     }
 

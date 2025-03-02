@@ -1,10 +1,7 @@
 import './bootstrap';
 
-console.log("App carregado!");
-
 document.addEventListener("DOMContentLoaded", function () {
     if (typeof window.gameId !== "undefined") {
-        console.log("Escutando o canal: game." + window.gameId);
 
         window.Echo.channel('game.' + window.gameId)
             .listen('.VoteRegistered', (e) => {
